@@ -112,7 +112,7 @@ function inyectarJSONLD() {
     "offers": p.precioVisible && p.precio > 0
       ? { "@type": "Offer", "priceCurrency": "COP", "price": p.precio, "availability": "https://schema.org/InStock" }
       : undefined
-  }).filter(x => x.offers !== undefined || x.name);
+  })).filter(x => x.offers !== undefined || x.name);
   const s = document.createElement('script');
   s.type = 'application/ld+json';
   s.id = 'productos-jsonld';
