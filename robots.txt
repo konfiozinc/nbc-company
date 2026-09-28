@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://konfiozinc.github.io/nbc-company/sitemap.xml

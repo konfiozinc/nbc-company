@@ -1,0 +1,25 @@
+media:
+  input: assets/img/productos
+  output: /assets/img/productos
+
+content:
+  - name: productos
+    label: Productos
+    type: file
+    path: content/productos.json
+    fields:
+      - name: productos
+        label: Lista de productos
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: Nombre, type: text }
+          - { name: categoria, label: Categoría, type: select, options: [ollas, sartenes, cuchillos, vajilla, accesorios] }
+          - { name: descripcionCorta, label: Descripción corta, type: text }
+          - { name: descripcionLarga, label: Descripción larga, type: textarea }
+          - { name: caracteristicas, label: Características, type: list, item_type: text }
+          - { name: precio, label: Precio (0 = oculto), type: number }
+          - { name: precioVisible, label: Mostrar precio, type: boolean }
+          - { name: imagen, label: Imagen del producto, type: image }
+          - { name: destacado, label: Destacado, type: boolean }
+          - { name: orden, label: Orden, type: number }

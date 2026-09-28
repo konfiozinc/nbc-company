@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBC Company — Royal Prestige | Utensilios de Cocina Acero 316L</title>
+    <meta name="description" content="NBC Company, distribuidor autorizado Royal Prestige en Palmira. Utensilios de cocina en acero quirúrgico 316L con garantía de 50 años. Asesoría gratuita a domicilio.">
+    <meta name="theme-color" content="#0B0B0B">
+
+    <link rel="canonical" href="https://konfiozinc.github.io/nbc-company/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NBC Company" />
+    <meta property="og:title" content="NBC Company — Distribuidor Autorizado Royal Prestige" />
+    <meta property="og:description" content="Utensilios de cocina en acero quirúrgico 316L con garantía de 50 años. Asesoría gratuita a domicilio." />
+    <meta property="og:url" content="https://konfiozinc.github.io/nbc-company/" />
+    <meta property="og:image" content="https://konfiozinc.github.io/nbc-company/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_CO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NBC Company — Distribuidor Autorizado Royal Prestige" />
+    <meta name="twitter:description" content="Utensilios de cocina en acero quirúrgico 316L con garantía de 50 años." />
+    <meta name="twitter:image" content="https://konfiozinc.github.io/nbc-company/og-image.jpg" />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="icons/favicon-64.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-180.png" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "NBC Company",
+      "description": "Distribuidor autorizado Royal Prestige: utensilios de cocina en acero inoxidable grado quirúrgico 316L con garantía de 50 años. Asesorías gratuitas a domicilio.",
+      "telephone": "+573041111391",
+      "email": "nutricionybienestarconsultores@gmail.com",
+      "url": "https://konfiozinc.github.io/nbc-company/",
+      "image": "https://konfiozinc.github.io/nbc-company/og-image.jpg",
+      "priceRange": "$$$",
+      "address": { "@type": "PostalAddress", "addressLocality": "Palmira", "addressRegion": "Valle del Cauca", "addressCountry": "CO" },
+      "brand": { "@type": "Brand", "name": "Royal Prestige" }
+    }
+    </script>
+
+    <script>
+    const GA_ID = 'G-XXXXXXXXXX';
+    if (GA_ID && !/^G-XXXX/.test(GA_ID)) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- QRCode JS Local -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        /* RESET & VARIABLES DE DISEÑO PREMIUM */
+        :root {
+            --bg-dark: #0B0B0B;
+            --bg-card: #141414;
+            --bg-elevated: #1A1A1A;
+            --gold-primary: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            --text-light: #FFFFFF;
+            --text-muted: #A3A3A3;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #050505;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-cinzel { font-family: 'Cinzel', serif; }
+
+        /* CONTENEDOR PRINCIPAL TIPO LANDING PREMIUM */
+        .card-container {
+            width: 100%;
+            max-width: 450px;
+            background-color: var(--bg-dark);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            border-left: 1px solid rgba(212, 175, 55, 0.2);
+            border-right: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        @media (min-width: 480px) {
+            .card-container {
+                border-radius: 24px;
+                min-height: 850px;
+                margin: 1.5rem 0;
+                border: 1px solid rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        .scroll-wrapper {
+            flex-grow: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-bottom: 5rem;
+        }
+
+        .scroll-wrapper::-webkit-scrollbar { width: 4px; }
+        .scroll-wrapper::-webkit-scrollbar-thumb { background: var(--gold-primary); border-radius: 4px; }
+
+        /* HERO & HEADER */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(11,11,11,0.3) 0%, rgba(11,11,11,0.95) 100%);
+        }
+
+        .profile-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            margin-top: -85px;
+        }
+
+        /* ANILLO Y LOGO SVG NATIVO INTEGRADO */
+        .logo-ring {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #000000;
+            padding: 2px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.9), 0 0 20px rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-ring svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .badge-verified {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: var(--gold-gradient);
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            border: 2px solid #0B0B0B;
+            z-index: 20;
+        }
+
+        .brand-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-top: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .brand-subtitle {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.2rem;
+        }
+
+        .brand-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        /* GRID ACTION BUTTONS */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.6rem;
+            padding: 1.5rem 1.5rem 0 1.5rem;
+        }
+
+        .action-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 0.75rem 0.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .action-card i {
+            font-size: 1.2rem;
+            color: var(--gold-primary);
+        }
+
+        .action-card span {
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: #E5E5E5;
+        }
+
+        .action-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        /* SECCIONES ESTILIZADAS */
+        .section-block {
+            padding: 1.5rem 1.5rem 0 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--gold-gradient);
+            margin: 0.4rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* QUIÉNES SOMOS CARD */
+        .about-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #D4D4D4;
+            text-align: justify;
+        }
+
+        .about-highlight {
+            color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        /* CATEGORÍAS DE PRODUCTO */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .cat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1rem 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .cat-card i {
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+        }
+
+        .cat-card h4 {
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .cat-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            background: var(--bg-elevated);
+        }
+
+        /* PROMO BANNER */
+        .promo-banner {
+            background: linear-gradient(135deg, #1A1A1A 0%, #0B0B0B 100%);
+            border: 1px solid var(--gold-primary);
+            border-radius: 16px;
+            padding: 1.25rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-badge {
+            background: var(--gold-gradient);
+            color: #000;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .promo-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .promo-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* ¿POR QUÉ ELEGIRNOS? */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-item {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 0.85rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+        }
+
+        .feature-text h5 {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .feature-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* MASONRY GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 130px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: #141414;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* VIDEO CONTAINER */
+        .video-wrapper {
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* BOTONES DE ACCIÓN PRINCIPALES */
+        .btn-gold {
+            width: 100%;
+            background: var(--gold-gradient);
+            color: #000000;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.9rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            width: 100%;
+            background: transparent;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.85rem;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        /* BOTÓN FLOTANTE DE WHATSAPP DENTRO DEL CONTENEDOR */
+        .float-wa {
+            position: absolute;
+            bottom: 60px;
+            right: 20px;
+            background: #25D366;
+            color: #FFF;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+            z-index: 90;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            border: 2px solid #0B0B0B;
+        }
+
+        .float-wa:hover { transform: scale(1.1); }
+
+        /* FOOTER BRANDING */
+        .brand-footer {
+            background: #000000;
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            text-align: center;
+            padding: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .brand-footer strong {
+            color: var(--gold-primary);
+        }
+
+        /* MODALS (QR / INSTALACIÓN) */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 20px;
+            max-width: 380px;
+            width: 100%;
+            border: 1px solid var(--gold-primary);
+            padding: 1.5rem;
+            position: relative;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-muted);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    </style>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL DE LA TARJETA DIGITAL -->
+    <div class="card-container">
+        <div class="scroll-wrapper">
+            
+            <!-- HERO HEADER -->
+            <div class="hero-banner" style="background-image: url('assets/img/hero.jpg');">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <!-- PERFIL E IDENTIDAD CORPORATIVA CON LOGO SVG VECTORIZADO -->
+            <div class="profile-wrapper">
+                <div class="logo-ring">
+                    <svg viewBox="0 0 500 500" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#BF953F" />
+                                <stop offset="25%" stop-color="#FCF6BA" />
+                                <stop offset="50%" stop-color="#B38728" />
+                                <stop offset="75%" stop-color="#FBF5B7" />
+                                <stop offset="100%" stop-color="#AA771C" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Círculos de borde exterior dorado -->
+                        <circle cx="250" cy="250" r="240" fill="#000000" stroke="url(#goldGrad)" stroke-width="12"/>
+                        <circle cx="250" cy="250" r="215" fill="none" stroke="url(#goldGrad)" stroke-width="5"/>
+                        <circle cx="250" cy="250" r="195" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+                        
+                        <!-- Isotipo Águila estilizada -->
+                        <g fill="url(#goldGrad)" transform="translate(195, 90) scale(0.45)">
+                            <path d="M122.5,0 C125,25 150,60 210,65 C170,80 140,110 122.5,150 C105,110 75,80 35,65 C95,60 120,25 122.5,0 Z"/>
+                            <path d="M70,85 C90,100 105,125 110,155 C90,145 65,135 40,135 C50,115 60,100 70,85 Z"/>
+                            <path d="M175,85 C155,100 140,125 135,155 C155,145 180,135 205,135 C195,115 185,100 175,85 Z"/>
+                        </g>
+                        
+                        <!-- Texto NBC -->
+                        <text x="250" y="315" font-family="'Cinzel', 'Montserrat', serif" font-size="115" font-weight="900" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="-2">NBC</text>
+                        
+                        <!-- Puntos decorativos laterales -->
+                        <circle cx="65" cy="260" r="6" fill="url(#goldGrad)"/>
+                        <circle cx="435" cy="260" r="6" fill="url(#goldGrad)"/>
+                        
+                        <!-- Líneas divisorias -->
+                        <path d="M 95 178 A 185 185 0 0 1 405 178" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M 90 338 A 185 185 0 0 0 410 338" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
+                        
+                        <!-- Texto COMPANY -->
+                        <text x="250" y="385" font-family="'Montserrat', sans-serif" font-size="38" font-weight="800" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="6">COMPANY</text>
+                    </svg>
+                    <div class="badge-verified"><i class="fas fa-check"></i></div>
+                </div>
+
+                <h1 class="font-cinzel brand-title">NBC COMPANY</h1>
+                <p class="brand-subtitle">Distribuidor Autorizado Royal Prestige</p>
+                
+                <div class="brand-location">
+                    <i class="fas fa-map-marker-alt" style="color: var(--gold-primary);"></i>
+                    <span>Palmira, Valle del Cauca, Colombia</span>
+                </div>
+            </div>
+
+            <!-- BOTONES DE ACCIÓN RÁPIDA (HERO) -->
+            <div class="quick-actions">
+                <a href="https://wa.me/573041111391?text=Hola%20NBC%20Company,%20deseo%20solicitar%20una%20asesor%C3%ADa%20gratuita." target="_blank" class="action-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="tel:+573041111391" class="action-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Llamar</span>
+                </a>
+                <a href="https://maps.google.com/?q=Palmira+Valle+del+Cauca" target="_blank" class="action-card">
+                    <i class="fas fa-location-dot"></i>
+                    <span>Ubicación</span>
+                </a>
+                <button id="save-contact-btn" class="action-card">
+                    <i class="fas fa-address-card"></i>
+                    <span>Guardar</span>
+                </button>
+            </div>
+
+            <!-- BARRA DE CONFIANZA -->
+            <div class="trust-bar">
+                <div class="trust-item"><i class="fas fa-certificate"></i><span>Distribuidor Autorizado</span></div>
+                <div class="trust-item"><i class="fas fa-award"></i><span>Garantía 50 años</span></div>
+                <div class="trust-item"><i class="fas fa-shield-halved"></i><span>Acero 316L</span></div>
+                <div class="trust-item"><i class="fas fa-house"></i><span>Asesoría gratis</span></div>
+            </div>
+
+            <!-- SECCIÓN: QUIÉNES SOMOS -->
+            <div class="section-block">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Quiénes Somos</h3>
+                </div>
+                <div class="about-card">
+                    Comercializamos utensilios de cocina de alta gama en <span class="about-highlight">Acero Inoxidable Grado Quirúrgico 316L</span> respaldados por una garantía de <span class="about-highlight">50 años</span>. Realizamos <span class="about-highlight">asesorías GRATUITAS</span> a domicilio para demostrar cómo preparar alimentos de forma saludable, sin agua, sin sal y sin aceite, protegiendo a tu familia de metales pesados.
+                </div>
+            </div>
+
+            <!-- SECCIÓN: CATEGORÍAS DE PRODUCTOS -->
+            <div class="section-block">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Líneas de Producto</h3>
+                </div>
+                <div class="categories-grid">
+                    <div class="cat-card">
+                        <i class="fas fa-kitchen-set"></i>
+                        <h4>Ollas Quirúrgicas</h4>
+                    </div>
+                    <div class="cat-card">
+                        <i class="fas fa-fire-burner"></i>
+                        <h4>Sartenes de Alta Gama</h4>
+                    </div>
+                    <div class="cat-card">
+                        <i class="fas fa-utensils"></i>
+                        <h4>Cuchillos de Precisión</h4>
+                    </div>
+                    <div class="cat-card">
+                        <i class="fas fa-faucet-drip"></i>
+                        <h4>Filtros & Vajillas</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: CATÁLOGO DE PRODUCTOS (desde JSON) -->
+            <div class="section-block" id="catalogo">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Productos</h3>
+                </div>
+                <input type="search" id="buscador" placeholder="Buscar producto…" aria-label="Buscar productos" autocomplete="off">
+                <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoría">
+                    <button class="filtro active" data-cat="todos">Todos</button>
+                </div>
+                <div class="grid-productos" id="grid-productos"></div>
+            </div>
+
+            <!-- SECCIÓN: PROMOCIÓN / DEMOSTRACIÓN -->
+            <div class="section-block">
+                <div class="promo-banner">
+                    <span class="promo-badge">Experiencia Exclusiva</span>
+                    <h4 class="font-cinzel promo-title">Demostración Gratuita en Casa</h4>
+                    <p class="promo-desc">Agenda una prueba culinaria sin costo en Palmira y conoce la cocina del futuro.</p>
+                    <a href="https://wa.me/573041111391?text=Quiero%20agendar%20mi%20demostraci%C3%B3n%20gratuita%20en%20casa." target="_blank" class="btn-gold">
+                        <i class="fab fa-whatsapp"></i> Agendar Mi Cita
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: ¿POR QUÉ ELEGIRNOS? -->
+            <div class="section-block">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Ventajas Exclusivas</h3>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="feature-text">
+                            <h5>Acero Quirúrgico 316L</h5>
+                            <p>Máxima pureza que no altera el sabor ni libera tóxicos.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-award"></i></div>
+                        <div class="feature-text">
+                            <h5>Garantía de 50 Años</h5>
+                            <p>Inversión garantizada de por vida para tu hogar.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-heart-pulse"></i></div>
+                        <div class="feature-text">
+                            <h5>Cocina Saludable</h5>
+                            <p>Cocina sin añadir agua ni aceites grasos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: GALERÍA MASONRY DE PRODUCTOS -->
+            <div class="section-block">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Galería de Productos</h3>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="assets/img/gallery-1.jpg" alt="Batería de cocina quirúrgica Royal Prestige" loading="lazy"></div>
+                    <div class="gallery-item"><img src="assets/img/gallery-2.jpg" alt="Sartén de acero inoxidable 316L" loading="lazy"></div>
+                    <div class="gallery-item"><img src="assets/img/gallery-3.jpg" alt="Juego de cuchillos profesionales" loading="lazy"></div>
+                    <div class="gallery-item"><img src="assets/img/gallery-4.jpg" alt="Menaje gourmet de cocina" loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: VIDEO DEMOSTRATIVO (pendiente video real) -->
+            <div class="section-block">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Video Presentación</h3>
+                </div>
+                <div class="video-wrapper" style="display:flex; align-items:center; justify-content:center;">
+                    <p style="color:var(--text-muted); font-size:0.8rem; padding:1rem; text-align:center;">Video de demostración próximamente.<br>Pide tu asesoría gratuita para una demostración en vivo.</p>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: CÓMO FUNCIONA LA ASESORÍA -->
+            <div class="section-block">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Asesoría Gratuita</h3>
+                </div>
+                <div class="steps">
+                    <div class="step"><span class="step-num">1</span><p>Contactas por WhatsApp</p></div>
+                    <div class="step"><span class="step-num">2</span><p>Agendamos tu visita</p></div>
+                    <div class="step"><span class="step-num">3</span><p>Vamos a tu hogar</p></div>
+                    <div class="step"><span class="step-num">4</span><p>Demostración en vivo</p></div>
+                    <div class="step"><span class="step-num">5</span><p>Decides sin presión</p></div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN: FORMULARIO DE AGENDAMIENTO -->
+            <div class="section-block" id="agendar">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Agenda tu Asesoría</h3>
+                </div>
+                <form id="form-agenda" class="agenda-form">
+                    <input type="text" id="f-nombre" placeholder="Tu nombre" required>
+                    <input type="tel" id="f-telefono" placeholder="Tu WhatsApp / teléfono" required>
+                    <input type="text" id="f-ciudad" placeholder="Ciudad">
+                    <input type="date" id="f-fecha">
+                    <button type="submit" class="btn-gold"><i class="fab fa-whatsapp"></i> Enviar por WhatsApp</button>
+                </form>
+                <p class="form-nota">Se abrirá WhatsApp con tu solicitud lista para enviar.</p>
+            </div>
+
+            <!-- SECCIÓN: PREGUNTAS FRECUENTES -->
+            <div class="section-block">
+                <div class="section-header">
+                    <h3 class="font-cinzel section-title">Preguntas Frecuentes</h3>
+                </div>
+                <div class="faq" id="faq">
+                    <details class="faq-item"><summary>¿La asesoría tiene costo?</summary><p>No. La demostración a domicilio es totalmente gratuita y sin compromiso.</p></details>
+                    <details class="faq-item"><summary>¿Los productos tienen garantía?</summary><p>Sí, 50 años de garantía respaldando el acero quirúrgico 316L.</p></details>
+                    <details class="faq-item"><summary>¿Envían a todo el país?</summary><p>Atendemos en Palmira y zonas cercanas; contáctanos para confirmar cobertura nacional.</p></details>
+                    <details class="faq-item"><summary>¿Qué métodos de pago aceptan?</summary><p>Consúltanos por WhatsApp los métodos disponibles y las opciones de financiación.</p></details>
+                </div>
+            </div>
+
+            <!-- BOTONES SECUNDARIOS DE UTILIDAD -->
+            <div class="section-block" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <button id="show-qr-btn" class="btn-outline">
+                    <i class="fas fa-qrcode"></i> Compartir Tarjeta / Código QR
+                </button>
+                <button id="show-instructions-btn" class="btn-outline" style="border: none; color: var(--text-muted); font-size: 0.75rem;">
+                    ¿Cómo instalar esta app en tu celular?
+                </button>
+            </div>
+
+        </div>
+
+        <!-- BOTÓN FLOTANTE DE WHATSAPP DENTRO DEL CONTENEDOR MÓVIL -->
+        <a href="https://wa.me/573041111391?text=Hola%20NBC%20Company,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos." target="_blank" class="float-wa" aria-label="Contacto WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- FOOTER BRANDING OBLIGATORIO -->
+        <div class="brand-footer">
+            NBC COMPANY © <span id="anio">2026</span> — Creado por <strong>KONFÍO ZINC</strong> · <a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Garantía</a>
+        </div>
+    </div>
+
+    <!-- MODAL QR -->
+    <div id="qr-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h4 class="font-cinzel" style="color: var(--gold-primary); margin-bottom: 1rem;">Código QR Corporativo</h4>
+            <div style="background: white; padding: 12px; border-radius: 12px; display: inline-block; margin-bottom: 0.8rem;">
+                <div id="qrcode"></div>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">Escanea con la cámara de tu móvil para abrir la tarjeta digital.</p>
+        </div>
+    </div>
+
+    <!-- MODAL INSTALACIÓN MÓVIL -->
+    <div id="install-modal" class="modal-overlay">
+        <div class="modal-content" style="text-align: left;">
+            <button class="modal-close-btn">&times;</button>
+            <h4 class="font-cinzel" style="color: var(--gold-primary); margin-bottom: 1rem; text-align: center;">Acceso Directo PWA</h4>
+            <p style="font-size: 0.8rem; margin-bottom: 0.5rem;"><strong style="color: var(--gold-primary);">iPhone (Safari):</strong> Pulsa 'Compartir' y elige 'Agregar a Inicio'.</p>
+            <p style="font-size: 0.8rem;"><strong style="color: var(--gold-primary);">Android (Chrome):</strong> Toca el menú de tres puntos y selecciona 'Instalar aplicación'.</p>
+        </div>
+    </div>
+
+    <!-- MODAL DETALLE DE PRODUCTO -->
+<div id="producto-modal" class="modal-overlay">
+    <div class="modal-content" style="text-align:left; max-width:400px;">
+        <button class="modal-close-btn" data-close="producto-modal" aria-label="Cerrar">&times;</button>
+        <div id="producto-detalle"></div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

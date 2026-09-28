@@ -1,0 +1,47 @@
+/* ===== NBC Company · secciones del catálogo ===== */
+.trust-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;padding:1rem 1.5rem 0}
+.trust-item{background:var(--bg-card);border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:.7rem .5rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;text-align:center}
+.trust-item i{color:var(--gold-primary);font-size:1.05rem}
+.trust-item span{font-size:.62rem;font-weight:600;color:#E5E5E5;line-height:1.2}
+
+#buscador{width:100%;background:var(--bg-card);border:1px solid rgba(212,175,55,.3);border-radius:10px;color:#fff;padding:.7rem 1rem;font-family:inherit;font-size:.85rem;margin-bottom:.75rem;outline:none}
+#buscador:focus{border-color:var(--gold-primary)}
+.filtros{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem}
+.filtro{background:var(--bg-card);color:var(--text-muted);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:.4rem .8rem;font-size:.72rem;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s}
+.filtro.active{background:var(--gold-gradient);color:#000;font-weight:800}
+
+.grid-productos{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+.producto{background:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;cursor:pointer;transition:.25s}
+.producto:hover{border-color:rgba(212,175,55,.45)}
+.producto img{width:100%;height:130px;object-fit:cover;display:block}
+.producto-cuerpo{padding:.7rem}
+.producto-cat{font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold-primary);font-weight:700}
+.producto-nombre{font-size:.82rem;font-weight:600;margin:.25rem 0 .5rem;color:#fff;line-height:1.25}
+.producto-cta{font-size:.72rem;color:#25D366;font-weight:600}
+
+.steps{display:flex;flex-direction:column;gap:.6rem}
+.step{display:flex;align-items:center;gap:.9rem;background:var(--bg-card);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:.75rem 1rem}
+.step-num{width:30px;height:30px;border-radius:50%;background:var(--gold-gradient);color:#000;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.85rem}
+.step p{font-size:.8rem;color:#E5E5E5}
+
+.agenda-form{display:flex;flex-direction:column;gap:.6rem}
+.agenda-form input{background:var(--bg-card);border:1px solid rgba(255,255,255,.08);border-radius:10px;color:#fff;padding:.75rem 1rem;font-family:inherit;font-size:.85rem;outline:none}
+.agenda-form input:focus{border-color:var(--gold-primary)}
+.agenda-form input[type="date"]{color-scheme:dark}
+.form-nota{font-size:.68rem;color:var(--text-muted);text-align:center;margin-top:.5rem}
+
+.faq{display:flex;flex-direction:column;gap:.5rem}
+.faq-item{background:var(--bg-card);border:1px solid rgba(255,255,255,.05);border-radius:10px}
+.faq-item summary{list-style:none;cursor:pointer;padding:.85rem 1rem;font-size:.82rem;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:"+";color:var(--gold-primary);font-size:1.1rem}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{padding:0 1rem .85rem;font-size:.78rem;color:var(--text-muted);line-height:1.5}
+
+.brand-footer a{color:var(--gold-primary);text-decoration:none}
+#producto-detalle img{width:100%;height:auto;border-radius:12px;display:block;margin-bottom:.75rem}
+#producto-detalle h4{font-family:'Cinzel',serif;color:var(--gold-primary);margin-bottom:.5rem;font-size:1.1rem}
+#producto-detalle p{font-size:.8rem;color:#D4D4D4;line-height:1.55}
+#producto-detalle ul{margin:.5rem 0 .75rem 1rem;font-size:.78rem;color:#D4D4D4}
+#producto-detalle .btn-gold{margin-top:.5rem}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

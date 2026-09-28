@@ -1,0 +1,124 @@
+{
+  "productos": [
+    {
+      "nombre": "Set de Ollas 10 Piezas",
+      "categoria": "ollas",
+      "descripcionCorta": "Set completo de ollas en acero quirúrgico 316L con sistema de cocción al vacío.",
+      "descripcionLarga": "Set de 10 piezas en acero inoxidable grado quirúrgico 316L. Cocina sin agua, sin sal y sin aceite, conservando nutrientes y sabor. Válvula de seguridad y garantía de 50 años.",
+      "caracteristicas": ["Acero 316L", "Garantía 50 años", "Válvula de presión", "10 piezas"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": true,
+      "orden": 1
+    },
+    {
+      "nombre": "Olla Multiusos 5L",
+      "categoria": "ollas",
+      "descripcionCorta": "Olla versátil para cocción saludable de todo tipo de alimentos.",
+      "descripcionLarga": "Olla de 5 litros ideal para preparar guisos, sopas y verduras al vapor sin agua ni aceite. Acabado de alta resistencia y fácil limpieza.",
+      "caracteristicas": ["Acero 316L", "5 litros", "Cocción al vapor"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": false,
+      "orden": 2
+    },
+    {
+      "nombre": "Olla de Presión Quirúrgica",
+      "categoria": "ollas",
+      "descripcionCorta": "Cocción rápida y segura con máxima retención de nutrientes.",
+      "descripcionLarga": "Sistema de presión de alta seguridad que reduce los tiempos de cocción y conserva vitaminas y minerales. Construida en acero quirúrgico 316L.",
+      "caracteristicas": ["Presión segura", "Acero 316L", "Ahorro de tiempo"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": false,
+      "orden": 3
+    },
+    {
+      "nombre": "Sartén Antiadherente 316L",
+      "categoria": "sartenes",
+      "descripcionCorta": "Sartén de acero quirúrgico que no libera tóxicos ni metales pesados.",
+      "descripcionLarga": "Sartén de alta gama para cocinar sin aceite. Su superficie de acero quirúrgico no se pega y no libera sustancias nocivas, ideal para una cocina más saludable.",
+      "caracteristicas": ["Antiadherente", "Acero 316L", "Sin aceite"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": true,
+      "orden": 4
+    },
+    {
+      "nombre": "Sartén Wok Profesional",
+      "categoria": "sartenes",
+      "descripcionCorta": "Wok de alto rendimiento para salteados saludables.",
+      "descripcionLarga": "Wok amplio para preparar salteados y verduras conservando textura y nutrientes, con distribución uniforme del calor.",
+      "caracteristicas": ["Alto rendimiento", "Acero 316L", "Distribución uniforme"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": false,
+      "orden": 5
+    },
+    {
+      "nombre": "Set de Cuchillos Profesionales",
+      "categoria": "cuchillos",
+      "descripcionCorta": "Cuchillos de precisión con filo duradero y mango ergonómico.",
+      "descripcionLarga": "Set de cuchillos en acero de alta calidad para cortes precisos. Incluye cuchillo chef, santoku, panero y de pelar, con funda de almacenamiento.",
+      "caracteristicas": ["Precisión", "Filo duradero", "Set completo"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": true,
+      "orden": 6
+    },
+    {
+      "nombre": "Cuchillo Santoku",
+      "categoria": "cuchillos",
+      "descripcionCorta": "El favorito de los chefs para cortar, picar y rebanar.",
+      "descripcionLarga": "Cuchillo multiusos de hoja ancha ideal para verduras, carnes y pescados. Equilibrio perfecto y corte limpio.",
+      "caracteristicas": ["Hoja ancha", "Versátil", "Equilibrado"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": false,
+      "orden": 7
+    },
+    {
+      "nombre": "Vajilla de Acero 316L",
+      "categoria": "vajilla",
+      "descripcionCorta": "Vajilla completa en acero quirúrgico, libre de tóxicos.",
+      "descripcionLarga": "Platos, pocillos y cubiertos en acero inoxidable grado quirúrgico 316L. Irrompible, higiénica y segura para toda la familia.",
+      "caracteristicas": ["Irrompible", "Higiénica", "Libre de tóxicos"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": false,
+      "orden": 8
+    },
+    {
+      "nombre": "Filtro de Agua + Vajilla",
+      "categoria": "vajilla",
+      "descripcionCorta": "Agua más pura y vajilla segura para tu hogar.",
+      "descripcionLarga": "Combo que incluye sistema de filtración de agua y vajilla en acero quirúrgico, cuidando la salud de tu familia.",
+      "caracteristicas": ["Filtración", "Acero 316L", "Salud familiar"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": false,
+      "orden": 9
+    },
+    {
+      "nombre": "Accesorios de Cocina",
+      "categoria": "accesorios",
+      "descripcionCorta": "Espátulas, cucharones y utensilios en acero quirúrgico.",
+      "descripcionLarga": "Set de accesorios de cocina en acero inoxidable 316L: espátulas, cucharones, pinzas y más. Resistente y fácil de limpiar.",
+      "caracteristicas": ["Acero 316L", "Resistente", "Set completo"],
+      "precio": 0,
+      "precioVisible": false,
+      "imagen": "assets/img/productos/placeholder.jpg",
+      "destacado": false,
+      "orden": 10
+    }
+  ]
+}
