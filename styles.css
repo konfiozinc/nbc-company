@@ -44,4 +44,8 @@
 #producto-detalle ul{margin:.5rem 0 .75rem 1rem;font-size:.78rem;color:#D4D4D4}
 #producto-detalle .btn-gold{margin-top:.5rem}
 
+.producto{position:relative}
+.producto-agotado{position:absolute;top:8px;left:8px;background:#B91C1C;color:#fff;font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2}
+.producto.agotado img{opacity:.45;filter:grayscale(1)}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}

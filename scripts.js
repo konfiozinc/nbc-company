@@ -11,50 +11,101 @@ const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>
 
 let PRODUCTOS = [];
 
+/* ── Firebase (compat) — fuente de datos en vivo ── */
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDHWE3OJMspi_z0CKPv8mjvjI7igum98rs",
+  authDomain: "el-titi-menu.firebaseapp.com",
+  databaseURL: "https://el-titi-menu-default-rtdb.firebaseio.com",
+  projectId: "el-titi-menu",
+  storageBucket: "el-titi-menu.firebasestorage.app",
+  messagingSenderId: "903648110789",
+  appId: "1:903648110789:web:6ac58748862dfeb5a568ac"
+};
+let fbDB = null;
+function initFirebase(){
+  try {
+    if (typeof firebase === 'undefined') return;
+    if (firebase.apps.length === 0) firebase.initializeApp(FIREBASE_CONFIG);
+    fbDB = firebase.database();
+  } catch (e) { fbDB = null; }
+}
+function fbToProductos(obj){
+  if (!obj || typeof obj !== 'object') return [];
+  return Object.keys(obj).filter(k => obj[k]).map(k => ({ id: k, ...obj[k] }));
+}
+function ordenarProductos(lista){
+  return lista.slice().sort((a, b) => {
+    if (!!a.destacado !== !!b.destacado) return a.destacado ? -1 : 1;
+    return (Number(a.orden) || 0) - (Number(b.orden) || 0);
+  });
+}
+
 /* ── Carga y render del catálogo ── */
 async function cargarProductos() {
-  try {
-    const r = await fetch('content/productos.json', { cache: 'no-store' });
-    const txt = await r.text();
-    const data = JSON.parse(txt.replace(/^\uFEFF/, ''));
-    PRODUCTOS = Array.isArray(data) ? data : (data.productos || []);
-  } catch (e) {
-    PRODUCTOS = [];
-  }
+  const renderCatalogo = () => {
+    const grid = $('#grid-productos');
+    const filtros = $('#filtros');
+    if (!grid) return;
 
-  const grid = $('#grid-productos');
-  const filtros = $('#filtros');
-  if (!grid) return;
+    if (!PRODUCTOS.length) {
+      grid.innerHTML = '<p style="color:var(--text-muted);font-size:.8rem;grid-column:1/-1;text-align:center;">Aún no hay productos. Agrégalos desde el panel de administración.</p>';
+      return;
+    }
 
-  if (!PRODUCTOS.length) {
-    grid.innerHTML = '<p style="color:var(--text-muted);font-size:.8rem;grid-column:1/-1;text-align:center;">Aún no hay productos. Agrégalos desde el panel de administración.</p>';
-    return;
-  }
+    // categorías únicas
+    const cats = [...new Set(PRODUCTOS.map(p => p.categoria).filter(Boolean))];
+    filtros.innerHTML = '<button class="filtro active" data-cat="todos">Todos</button>' +
+      cats.map(c => `<button class="filtro" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
 
-  // categorías únicas
-  const cats = [...new Set(PRODUCTOS.map(p => p.categoria).filter(Boolean))];
-  filtros.innerHTML = '<button class="filtro active" data-cat="todos">Todos</button>' +
-    cats.map(c => `<button class="filtro" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+    renderGrid(PRODUCTOS);
 
-  renderGrid(PRODUCTOS);
+    // filtros
+    filtros.addEventListener('click', (e) => {
+      const b = e.target.closest('.filtro');
+      if (!b) return;
+      $$('.filtro', filtros).forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const cat = b.dataset.cat;
+      renderGrid(cat === 'todos' ? PRODUCTOS : PRODUCTOS.filter(p => p.categoria === cat));
+    });
 
-  // filtros
-  filtros.addEventListener('click', (e) => {
-    const b = e.target.closest('.filtro');
-    if (!b) return;
-    $$('.filtro', filtros).forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    const cat = b.dataset.cat;
-    renderGrid(cat === 'todos' ? PRODUCTOS : PRODUCTOS.filter(p => p.categoria === cat));
+    // buscador
+    $('#buscador').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      renderGrid(PRODUCTOS.filter(p => (p.nombre || '').toLowerCase().includes(q)));
+    });
+
+    inyectarJSONLD();
+  };
+
+  return new Promise(resolve => {
+    let settled = false;
+    const finish = (fn) => { if (!settled) { settled = true; fn(); resolve(); } };
+    const local = async () => {
+      try {
+        const r = await fetch('content/productos.json', { cache: 'no-store' });
+        const txt = await r.text();
+        const data = JSON.parse(txt.replace(/^\uFEFF/, ''));
+        PRODUCTOS = Array.isArray(data) ? data : (data.productos || []);
+      } catch (e) {
+        PRODUCTOS = [];
+      }
+      PRODUCTOS = ordenarProductos(PRODUCTOS);
+      finish(renderCatalogo);
+    };
+    if (fbDB) {
+      fbDB.ref('nbc-company/productos').on('value', snap => {
+        const lista = fbToProductos(snap.val());
+        if (lista.length) {
+          PRODUCTOS = JSON.parse(JSON.stringify(ordenarProductos(lista)));
+          finish(renderCatalogo);
+        }
+      }, () => finish(local));
+      setTimeout(() => { if (!settled) finish(local); }, 5000);
+    } else {
+      finish(local);
+    }
   });
-
-  // buscador
-  $('#buscador').addEventListener('input', (e) => {
-    const q = e.target.value.toLowerCase();
-    renderGrid(PRODUCTOS.filter(p => (p.nombre || '').toLowerCase().includes(q)));
-  });
-
-  inyectarJSONLD();
 }
 
 function renderGrid(lista) {
@@ -65,8 +116,9 @@ function renderGrid(lista) {
     return;
   }
   grid.innerHTML = lista.map((p, i) => `
-    <article class="producto" data-i="${i}" tabindex="0" role="button" aria-label="Ver ${esc(p.nombre)}">
+    <article class="producto ${p.agotado ? 'agotado' : ''}" data-i="${i}" tabindex="0" role="button" aria-label="Ver ${esc(p.nombre)}">
       <img src="${esc(p.imagen || 'assets/img/productos/placeholder.jpg')}" alt="${esc(p.nombre)}" loading="lazy">
+      ${p.agotado ? '<span class="producto-agotado">No disponible</span>' : ''}
       <div class="producto-cuerpo">
         <div class="producto-cat">${esc(p.categoria || '')}</div>
         <div class="producto-nombre">${esc(p.nombre)}</div>
@@ -175,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Catálogo + año + SW
+  initFirebase();
   cargarProductos();
   const anio = document.getElementById('anio');
   if (anio) anio.textContent = new Date().getFullYear();
