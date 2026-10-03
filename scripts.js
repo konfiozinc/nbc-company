@@ -115,34 +115,47 @@ function renderGrid(lista) {
     grid.innerHTML = '<p style="color:var(--text-muted);font-size:.8rem;grid-column:1/-1;text-align:center;">Sin resultados.</p>';
     return;
   }
-  grid.innerHTML = lista.map((p, i) => `
-    <article class="producto ${p.agotado ? 'agotado' : ''}" data-i="${i}" tabindex="0" role="button" aria-label="Ver ${esc(p.nombre)}">
-      <img src="${esc(p.imagen || 'assets/img/productos/placeholder.jpg')}" alt="${esc(p.nombre)}" loading="lazy">
-      ${p.agotado ? '<span class="producto-agotado">No disponible</span>' : ''}
+  grid.innerHTML = lista.map((p) => {
+    const precio = (p.precioVisible && p.precio > 0) ? `<div class="producto-precio">$${Number(p.precio).toLocaleString('es-CO')} COP</div>` : '';
+    return `
+    <article class="producto ${p.agotado ? 'agotado' : ''}" tabindex="0" role="button" aria-label="Ver ${esc(p.nombre)}">
+      <div class="producto-img-wrap">
+        <img src="${esc(p.imagen || 'assets/img/productos/placeholder.jpg')}" alt="${esc(p.nombre)}" loading="lazy">
+        ${p.agotado ? '<span class="producto-agotado">No disponible</span>' : ''}
+        ${p.destacado ? '<span class="producto-destacado">★</span>' : ''}
+      </div>
       <div class="producto-cuerpo">
         <div class="producto-cat">${esc(p.categoria || '')}</div>
         <div class="producto-nombre">${esc(p.nombre)}</div>
-        <div class="producto-cta">Solicitar información →</div>
+        <div class="producto-desc">${esc(p.descripcionCorta || '')}</div>
+        ${precio}
+        <div class="producto-acciones">
+          <button class="producto-ver" data-accion="ver">Ver más</button>
+          <a class="producto-wa" data-accion="wa" href="${waLink('Hola NBC Company, me interesa el producto: ' + p.nombre + '.')}" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
-    </article>`).join('');
+    </article>`;
+  }).join('');
 
-  grid.querySelectorAll('.producto').forEach(card => {
-    const abrir = () => abrirProducto(Number(card.dataset.i));
-    card.addEventListener('click', abrir);
+  grid.querySelectorAll('.producto').forEach((card, i) => {
+    const p = lista[i];
+    const abrir = () => abrirProducto(p);
+    card.addEventListener('click', (e) => { if (e.target.closest('[data-accion="wa"]')) return; abrir(); });
     card.addEventListener('keydown', (e) => { if (e.key === 'Enter') abrir(); });
   });
 }
 
-function abrirProducto(i) {
-  const p = PRODUCTOS[i];
+function abrirProducto(p) {
   if (!p) return;
   const detalle = $('#producto-detalle');
   const precio = (p.precioVisible && p.precio > 0) ? `<p style="color:var(--gold-primary);font-weight:700;">$${Number(p.precio).toLocaleString('es-CO')} COP</p>` : `<p style="color:var(--text-muted);">Precio en asesoría personalizada</p>`;
+  const agotado = p.agotado ? `<p style="color:#ef4444;font-weight:700;">❌ No disponible por el momento</p>` : '';
   const caracts = (p.caracteristicas && p.caracteristicas.length) ? `<ul>${p.caracteristicas.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : '';
   detalle.innerHTML = `
     <img src="${esc(p.imagen || 'assets/img/productos/placeholder.jpg')}" alt="${esc(p.nombre)}">
     <h4>${esc(p.nombre)}</h4>
     ${precio}
+    ${agotado}
     <p>${esc(p.descripcionLarga || p.descripcionCorta || '')}</p>
     ${caracts}
     <a class="btn-gold" href="${waLink('Hola NBC Company, me interesa el producto: ' + p.nombre + '.')}" target="_blank" rel="noopener">
@@ -219,8 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const nombre = $('#f-nombre').value.trim();
       const telefono = $('#f-telefono').value.trim();
-      const ciudad = $('#f-ciudad').value.trim();
-      const fecha = $('#f-fecha').value;
+      const ciudadEl = $('#f-ciudad'); const fechaEl = $('#f-fecha');
+      const ciudad = ciudadEl ? ciudadEl.value.trim() : '';
+      const fecha = fechaEl ? fechaEl.value : '';
       const msg = `Hola NBC Company, quiero agendar una asesoría gratuita.%0ANombre: ${nombre}%0ATeléfono: ${telefono}${ciudad ? `%0ACiudad: ${ciudad}` : ''}${fecha ? `%0AFecha preferida: ${fecha}` : ''}`;
       window.open('https://wa.me/' + WHATSAPP + '?text=' + msg, '_blank');
     });
