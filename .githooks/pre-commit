@@ -1,21 +1,26 @@
 #!/bin/sh
 # Pre-commit hook: bloquea Google API Keys y patrones de secreto en commits nuevos.
-# La clave publica de Firebase del proyecto konfio-zinc esta permitida (es publica por diseno,
-# protegida por Firestore Security Rules y restringida por referrer en Google Cloud).
-KNOWN_KEY="AIzaSyDbwAk9APwP2SeaEfWxeQG_bdL9eatciEA"
+# Claves publicas de Firebase permitidas (publicas por diseno, protegidas por
+# Security Rules y restringidas por referrer en Google Cloud):
+#   - konfio-zinc   (analitica Firestore de la agencia)
+#   - el-titi-menu  (proyecto compartido de menus y catalogos)
+KNOWN_KEYS="AIzaSyDbwAk9APwP2SeaEfWxeQG_bdL9eatciEA AIzaSyDHWE3OJMspi_z0CKPv8mjvjI7igum98rs"
 
 # Solo lineas ANADIDAS (sin contexto) para evitar falsos positivos por lineas vecinas.
 added=$(git diff --cached --diff-filter=ACM -U0 | grep -E '^\+[^+]' | grep -oE 'AIza[0-9A-Za-z_-]{35}' | sort -u)
 
 if [ -n "$added" ]; then
   for key in $added; do
-    if [ "$key" != "$KNOWN_KEY" ]; then
-      echo ""
-      echo "ERROR: Se detecto una Google API Key no permitida en este commit: $key"
-      echo "  Si es una key publica de Firebase, agregala a KNOWN_KEY en .githooks/pre-commit."
-      echo "  Si es un secreto real, muevelo fuera del repositorio."
-      exit 1
-    fi
+    case " $KNOWN_KEYS " in
+      *" $key "*) ;;
+      *)
+        echo ""
+        echo "ERROR: Se detecto una Google API Key no permitida en este commit: $key"
+        echo "  Si es una key publica de Firebase, agregala a KNOWN_KEYS en .githooks/pre-commit."
+        echo "  Si es un secreto real, muevelo fuera del repositorio."
+        exit 1
+        ;;
+    esac
   done
 fi
 
